@@ -1,4 +1,4 @@
-package br.com.cast.comparator.entity;
+package br.com.cast.comparator.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
