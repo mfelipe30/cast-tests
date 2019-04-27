@@ -21,7 +21,7 @@ public class ComparatorService {
 	public Document salvar(Long id, String dados, String side) throws Exception {
 		Document document = null;
 		
-		if(validador(id, dados)){
+		if(validator(id, dados)){
 			document = repository.findById(id);
 			
 			if (document == null) {
@@ -41,7 +41,7 @@ public class ComparatorService {
 		return document;
 	}
 	
-	public boolean validador(Long id, String data) throws ValidationException {
+	public boolean validator(Long id, String data) throws ValidationException {
 		boolean isValid = true;
 
 		if (StringUtils.isEmpty(data)) {

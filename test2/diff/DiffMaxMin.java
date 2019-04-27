@@ -12,8 +12,8 @@ public class DiffMaxMin {
         max = array[array.length-1];
         long tempoFinal = System.currentTimeMillis();
 
-        System.out.println("Executado em = " + (tempoFinal - tempoInicial) + " ms");
         System.out.println(max - min);
+        System.out.println("Executado em = " + (tempoFinal - tempoInicial) + " ms");
     }
 
     private static void quickSort(int[] vetor, int inicio, int fim) {
