@@ -16,35 +16,35 @@ import br.com.cast.people.service.PeopleService;
 /**
  * PeopleController
  */
-
 @RestController
+@RequestMapping("/people")
 public class PeopleController {
 
     @Autowired
     private PeopleService peopleService;
 
-    @RequestMapping(value="/clientDetails", method = RequestMethod.GET)
-    public Optional getClient(@RequestParam("id") Long id) {
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public Optional getPeople(@RequestParam("id") Long id) {
         return peopleService.findParticularPeople(id);
     }
 
-    @RequestMapping(value="/clients", method= RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     public List getAllPeoplesList() {
         return peopleService.getAllPeoples();
     }
 
-    @RequestMapping(value="/clientCreate", method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     public void createPeople(@RequestBody People people) {
         peopleService.createPeople(people);
     }
 
-    @RequestMapping(value="/clientDelete", method = RequestMethod.DELETE)
-    public void deleteClient(@RequestParam("id") Long id) {
+    @RequestMapping(method = RequestMethod.DELETE)
+    public void deletePeople(@RequestParam("id") Long id) {
         peopleService.deletePeopleRecord(id);
     }
 
-    @RequestMapping(value="/clientUpdate", method = RequestMethod.PUT)
-    public void updateClient(@RequestBody People people, @RequestParam("id") Long peopleId) {
+    @RequestMapping(method = RequestMethod.PUT)
+    public void updatePeople(@RequestBody People people, @RequestParam("id") Long peopleId) {
         peopleService.updatePeopleRecord(people, peopleId);
     }
     
