@@ -1,4 +1,7 @@
-package main.java.br.com.cast.comparator.helpers;
+package br.com.cast.comparator.helpers;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 
 public class Util {
 
@@ -10,9 +13,10 @@ public class Util {
      * @return
      */
     public String buildJsonResponse(String mensagem) {
-        JSONObject obj = new JSONObject();
-        obj.put(COST_MENSAGEM, mensagem);
+        ObjectMapper mapper = new ObjectMapper();
+		ObjectNode objectNode = mapper.createObjectNode();
+        objectNode.put(COST_MENSAGEM, mensagem);
 
-        return obj.toString();
+        return objectNode.toString();
     }
 }

@@ -36,7 +36,7 @@ public class ComparatorController {
 	
 	@GetMapping
 	public String diff(@PathVariable Long id) {
-		return Util.buildJsonResponse(service.validadorBase64Dado(id));
+		return Util.buildJsonResponse(service.validatorBase64(id));
 	}
 	
 }

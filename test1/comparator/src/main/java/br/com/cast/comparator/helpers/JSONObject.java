@@ -1,4 +1,4 @@
-package main.java.br.com.cast.comparator.helpers;
+package br.com.cast.comparator.helpers;
 
 public class JSONObject {
 
